@@ -1,0 +1,10 @@
+/* Imagen principal */
+.main-image {
+  width: 650px;
+  height: auto;
+}
+
+/* Texto blanco */
+.white-text {
+  color: #ffffff;
+}
