@@ -14,3 +14,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('authentication.register');
 });
+ 
+Route::get('/game', function () {
+    return view('game');
+});
