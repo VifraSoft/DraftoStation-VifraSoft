@@ -10,7 +10,7 @@
 <body>
     <!--Boton en el header que manda hacia atras-->
     <header class="p-3 bg-light">
-        <a href="/" class="btn btn-sm btn-outline-dark">← Atrás</a>
+        <a href="pruebita.html" class="btn btn-sm btn-outline-dark">← Atrás</a>
     </header>
     
     <div class="container  text-center mt-5">
