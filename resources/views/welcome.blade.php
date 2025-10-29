@@ -43,7 +43,7 @@
             
             <!-- Botones a la derecha -->
             <div class="d-flex">
-                <a href="/login" class="btn btn-outline-light me-2">Iniciar Sessión</a>
+                <a href="/login" class="btn btn-outline-light me-2">Iniciar Sesión</a>
                 <a href="/register" class="btn btn-primary">Registrarse</a>
             </div>
             
@@ -54,6 +54,11 @@
   </header>
   <!-- Contenedor principal -->
   <div class="container mt-5">
+    @if (session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+      </div>
+    @endif
     <div class="row">
       <div class="col-12 col-md-6 col-lg-6 p-5">
         <h1>DraftoStation</h1>
