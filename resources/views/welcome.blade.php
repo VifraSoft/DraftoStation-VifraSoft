@@ -34,19 +34,28 @@
                 <a class="nav-link" href="#Clasificación">Clasificación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Jugadores</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">Acerca de</a>
               </li>
             </ul>
             
             <!-- Botones a la derecha -->
+             @guest
             <div class="d-flex">
                 <a href="/login" class="btn btn-outline-light me-2">Iniciar Sessión</a>
                 <a href="/register" class="btn btn-primary">Registrarse</a>
             </div>
-            
+             @endguest           
+             @auth
+             <div class="d-flex align-items-center">
+                <form method="POST" action="/logout">
+                  <span class="navbar-text text-white me-3">
+                      Hola, {{ Auth::user()->nickname }}
+                  </span>
+                @csrf
+            <button type="submit" class="btn btn-outline-danger">Cerrar Sesión</button>
+                      </form>
+                  </div>
+             @endauth
           </div>
         </div>
       </nav>
