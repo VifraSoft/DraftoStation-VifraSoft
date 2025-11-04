@@ -19,6 +19,13 @@ Route::get('/game', function () {
     return view('game');
 });
 
+
 use App\Http\Controllers\UserController;
 
 Route::resource('users', UserController::class);
+
+Route::resource('users', UserController::class);
+Route::post('/register', [UserController::class, 'store'])->name('register.store');
+Route::post('/login', [UserController::class, 'login'])->name('users.login');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
