@@ -31,10 +31,7 @@
 </head>
 <body>
     <!--Boton en el header que manda hacia atras-->
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     <header class="p-3 bg-light position-absolute top-0 start-0 w-100">
         <a href="/" class="btn btn-sm btn-outline-dark">← Atrás</a>
     </header>
