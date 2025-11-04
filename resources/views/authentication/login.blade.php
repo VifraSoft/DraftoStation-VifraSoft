@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,10 @@
 </head>
 <body>
     <!--Boton en el header que manda hacia atras-->
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <header class="p-3 bg-light position-absolute top-0 start-0 w-100">
         <a href="/" class="btn btn-sm btn-outline-dark">← Atrás</a>
     </header>
@@ -40,30 +44,40 @@
             <h1 class="fw-bold">Iniciar Sesión</h1>
         </div>
 
-        <div class="mb-3">
-            <!-- Label agregado para el campo de usuario/correo -->
-            <label for="usernameInput" class="form-label mt-3 d-block text-start">Correo</label>
-
-            <div class="input-group flex-nowrap">  <!-- flex-nowrap = lo que hace es que si se achica el tamaño no se rompe el diseño -->
-                <span class="input-group-text" id="addon-wrapping">@</span> <!--Span ees un contenedor en línea para mostrar un texto o ícono-->
-                <!--→input-group-text  Es una clase especial de Bootstrap que se usa dentro de un input-group, le da estilo de caja gris clara-->
-                <input type="email" class="form-control" id="usernameInput" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="addon-wrapping">
-                <!--"from-control" = hace que el input ocupe todo el ancho disponible dentro del input gorup y tenga estilo de formulario de Bootstrap -->
-                <!--placeholder = Muestra el texto de ayuda “Username”-->
-            </div>
+        {{-- Mostrar errores (si los hay) --}}
+        @if ($errors->any())
+        <div class="alert alert-danger text-start">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $err)
+                    <li>{{ $err }}</li>
+                @endforeach
+            </ul>
         </div>
+        @endif
 
-        <!--Gmail-->
-        <form class="mt-3"> <!--Form = crear un formulario donde el usuario pone sus datos y despues se envian al servidor-->
-            <!--Password-->
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label d-block text-start">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
+       <!-- Form con POST hacia la ruta 'login' y token CSRF; engloba email y password -->
+         <form action="{{ route('users.login') }}" method="POST" class="mt-3">
+    @csrf
 
-            <!--Botón-->
-            <button type="submit" class="btn btn-primary w-100">Acceso</button>
-        </form>
+    <div class="mb-3">
+        <!-- Label agregado para el campo de usuario/correo -->
+        <label for="usernameInput" class="form-label mt-3 d-block text-start">Correo</label>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="email" name="email" class="form-control" id="usernameInput" value="{{ old('email') }}" placeholder="tu@correo.com" aria-label="Username" aria-describedby="addon-wrapping" required>
+        </div>
+    </div>
+
+    <!--Password-->
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label d-block text-start">Contraseña</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+    </div>
+
+    <!--Botón-->
+    <button type="submit" class="btn btn-primary w-100">Acceso</button>
+</form>
     </div>
 
 </body>
