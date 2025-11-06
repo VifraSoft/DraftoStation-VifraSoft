@@ -34,13 +34,15 @@
             @endguest               
             @auth
             <div class="d-flex align-items-center">
-                <form method="POST" action="/logout">
-                  <span class="navbar-text text-white me-3">
-                      Hola, {{ Auth::user()->nickname }}
-                  </span>
-                  @csrf
-                  <button type="submit" class="btn btn-outline-danger">Cerrar Sesión</button>
-                </form>
+            <form method="POST" action="/logout">
+                  @if(auth()->check() && !Request::is('admin*'))
+                  <span class="text-light">Hola, {{ auth()->user()->nickname }}</span>
+                  <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                    @csrf
+                  <button class="btn btn-danger">Cerrar sesión</button>
+            </form>
+          @endif
+
             </div>
             @endauth
           </div>
