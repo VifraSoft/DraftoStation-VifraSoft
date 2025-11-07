@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,18 @@
 </head>
 <body>
     <!--Boton en el header que manda hacia atras-->
+<<<<<<< HEAD
     <header class="p-3 bg-light">
         <a href="pruebita.html" class="btn btn-sm btn-outline-dark">← Atrás</a>
 
     <header class="p-3 bg-light position-absolute top-0 start-0 w-100">
         <a href="/" class="btn btn-sm btn-outline-dark">← Atrás</a>
 
+=======
+
+    <header class="p-3 bg-light position-absolute top-0 start-0 w-100">
+        <a href="/" class="btn btn-sm btn-outline-dark">← Atrás</a>
+>>>>>>> feature
     </header>
 
     <div class="glass-container text-center mt-5">
@@ -44,6 +50,7 @@
             <h1 class="fw-bold">Iniciar Sesión</h1>
         </div>
 
+<<<<<<< HEAD
         <div class="mb-3">
             <!-- Label agregado para el campo de usuario/correo -->
             <label for="usernameInput" class="form-label mt-3 d-block text-start">Correo</label>
@@ -70,5 +77,43 @@
         </form>
     </div>
 
+=======
+        {{-- Mostrar errores (si los hay) --}}
+        @if ($errors->any())
+        <div class="alert alert-danger text-start">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $err)
+                    <li>{{ $err }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+       <!-- Form con POST hacia la ruta 'login' y token CSRF; engloba email y password -->
+         <form action="{{ route('users.login') }}" method="POST" class="mt-3">
+    @csrf
+
+    <div class="mb-3">
+        <!-- Label agregado para el campo de usuario/correo -->
+        <label for="usernameInput" class="form-label mt-3 d-block text-start">Correo</label>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="email" name="email" class="form-control" id="usernameInput" value="{{ old('email') }}" placeholder="tu@correo.com" aria-label="Username" aria-describedby="addon-wrapping" required>
+        </div>
+    </div>
+
+    <!--Password-->
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label d-block text-start">Contraseña</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+    </div>
+
+    <!--Botón-->
+    <button type="submit" class="btn btn-primary w-100">Acceso</button>
+</form>
+    </div>
+
+>>>>>>> feature
 </body>
 </html>

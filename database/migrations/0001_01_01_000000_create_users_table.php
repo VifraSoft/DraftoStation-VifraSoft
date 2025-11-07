@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('nickname')->unique();
             $table->string('email')->unique();
             $table->string('password');
+<<<<<<< HEAD
+=======
+            $table->boolean('is_admin')->default(false);
+            $table->rememberToken();
+>>>>>>> feature
             $table->timestamps();
             $table->rememberToken();
         });
