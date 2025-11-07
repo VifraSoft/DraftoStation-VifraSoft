@@ -15,7 +15,7 @@
 
     <form action="{{ route('logout') }}" method="POST" class="mt-4">
         @csrf
-        <button type="submit" class="btn btn-outline-dark">Cerrar sesión</button>
+        <button type="submit" class="btn btn-outline-dark mt-4">Cerrar sesión</button>
     </form>
 </div>
 @endsection

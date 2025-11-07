@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">      
 </head>
-<body class="papuu">
+<body class="d-flex flex-column min-vh-100">
   
   <header>
     <div class="container-fluid bg-dark">
@@ -51,7 +51,7 @@
     </div>
   </header>
   
-  <main class="container mt-5"> {{-- Usamos <main> para el contenido principal --}}
+  <main class="container mt-5 flex-grow-1"> {{-- Usamos <main> para el contenido principal --}}
     @if (session('success'))
       <div class="alert alert-success">
         {{ session('success') }}
@@ -65,7 +65,7 @@
   
   {{-- FOOTER GENÉRICO --}}
   <footer class="bg-dark text-white text-center py-3 mt-5">
-    <div class="container">
+    <div class="container ">
       <img class="navbar-brand" src="{{ asset('img/VifraSoft_Logo-removebg-preview.png') }}" alt="Logo" height="50px" width="110px">
       <p>&copy; {{ date('Y') }} VifraSoft. Todos los derechos reservados.</p>
     </div>
