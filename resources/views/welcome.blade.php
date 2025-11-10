@@ -100,17 +100,17 @@
       </div>
     </div>
     
-    <div id="Jugar" class="container mt-5 bg-dark py-5 text-white"> {{-- Agregué text-white --}}
-      <div class="row">
-        <h2 class="text-center mt-3 my-5">Entrar a una partida</h2>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-success" type="button">Jugar</button>
-        </div>
-        <div id="mensaje" class="alert alert-success mt-3 d-none" role="alert">
-          ¡La partida comenzó!
-        </div>
-      </div>
-    </div>
+    <div id="Jugar" class="container mt-5 bg-dark py-5 text-white">
+	  <div class="row">
+		<h2 class="text-center mt-3 my-5">Entrar a una partida</h2>
+		<div class="d-grid gap-2 col-6 mx-auto">
+		  <a href="{{ route('jugar') }}" class="btn btn-success btn-lg w-100">Jugar</a>
+		</div>
+		<div id="mensaje" class="alert alert-success mt-3 d-none" role="alert">
+		  ¡La partida comenzó!
+		</div>
+	  </div>
+	</div>
     
     <div class="card shadow-lg border-0 mb-4">
       <div class="card-header bg-primary text-white">

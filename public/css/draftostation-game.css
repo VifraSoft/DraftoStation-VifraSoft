@@ -1,0 +1,188 @@
+/* =========================================================
+   DraftoStation - Tema oscuro (scoped) + Fix títulos región
+   ========================================================= */
+.drafto-wrap{
+  --bg:#0b1020 !important;
+  --panel:#0f1630 !important;
+  --card:#111a3a !important;
+  --accent:#27ae60 !important;
+  --accent2:#2ecc71 !important;
+  background:var(--bg) !important;
+  color:#e9edf1 !important;
+}
+
+/* Contenedores / títulos */
+.drafto-wrap .panel{
+  background:var(--panel) !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+  border-radius:.75rem !important;
+}
+.drafto-wrap .card{
+  background:var(--card) !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+}
+.drafto-wrap .title{ color:#9db0ff !important; }
+
+/* Fichas / botones del pool */
+.drafto-wrap .token{ cursor:grab !important; user-select:none !important; }
+.drafto-wrap .token:active{ cursor:grabbing !important; }
+.drafto-wrap .token-btn{
+  background:#0c1430 !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+  color:#e9edf1 !important;
+}
+.drafto-wrap .token-btn:hover{ background:#13214a !important; }
+
+/* Zonas de drop */
+.drafto-wrap .dropzone{
+  min-height:90px !important;
+  border:2px dashed rgba(255,255,255,.15) !important;
+  border-radius:.75rem !important;
+  padding:.5rem !important;
+  transition:border-color .15s, background .15s !important;
+}
+.drafto-wrap .dropzone.dragover{
+  border-color:var(--accent2) !important;
+  background:rgba(46,204,113,.08) !important;
+}
+
+/* Tabla de score */
+.drafto-wrap .score-table thead th{
+  color:#9db0ff !important;
+  text-transform:uppercase !important;
+  font-size:.8rem !important;
+  letter-spacing:.03em !important;
+}
+
+/* Grid del mapa */
+.drafto-wrap .map-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:1rem !important;
+}
+
+/* Botones primarios del juego */
+.drafto-wrap .btn-accent{
+  background:var(--accent) !important;
+  border:none !important;
+  color:#0c1a0c !important;
+}
+.drafto-wrap .btn-accent:hover{ background:var(--accent2) !important; }
+
+/* Chips (fichas coloreadas por jugador) */
+.drafto-wrap .chip{
+  border:1px solid rgba(0,0,0,.15) !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12) inset !important;
+  color:#fff !important;
+  font-weight:600 !important;
+}
+
+/* Píldoras de jugadores (lista izquierda) */
+.drafto-wrap .player-pill{
+  --pill:#999 ;
+  display:inline-block !important;
+  background:var(--pill) !important;
+  background-color:var(--pill) !important; /* fallback */
+  border:1px solid var(--pill) !important;
+  color:#fff !important;
+  border-radius:999px !important;
+  padding:.1rem .5rem !important;
+  margin-right:.25rem !important;
+  font-size:.8rem !important;
+}
+
+/* Punto de color en el score */
+.drafto-wrap .legend-dot{
+  --dot:#999 ;
+  display:inline-block !important;
+  width:.65rem !important;
+  height:.65rem !important;
+  border-radius:50% !important;
+  background:var(--dot) !important;
+  background-color:var(--dot) !important; /* fallback */
+  margin-right:.35rem !important;
+  vertical-align:middle !important;
+}
+
+/* Indicador de jugador activo */
+.drafto-wrap #activePlayerIndicator{
+  font-weight:700 !important;
+  letter-spacing:.2px !important;
+}
+
+/* Formularios */
+.drafto-wrap .form-label{ color:#cdd6f4 !important; }
+.drafto-wrap .form-control,
+.drafto-wrap .form-select{
+  background:#0e1a36 !important;
+  color:#e9edf1 !important;
+  border:1px solid rgba(255,255,255,.1) !important;
+}
+.drafto-wrap .form-control:focus,
+.drafto-wrap .form-select:focus{
+  border-color:var(--accent2) !important;
+  box-shadow:0 0 0 .2rem rgba(46,204,113,.15) !important;
+}
+
+/* Tablas dark */
+.drafto-wrap .table-dark{
+  --bs-table-bg:#0f1630 !important;
+  --bs-table-border-color:rgba(255,255,255,.08) !important;
+  color:#e9edf1 !important;
+  border-color:var(--bs-table-border-color) !important;
+}
+
+/* =========================================================
+   FIX VISIBILIDAD: Títulos de región (Río, Bosque, etc.)
+   - No cambia tu HTML.
+   - Aplica al <strong> del header de cada .card.
+   ========================================================= */
+.drafto-wrap .card .d-flex.align-items-center.justify-content-between > strong,
+.drafto-wrap .region-title{
+  color:#eaf2ff !important;           /* alto contraste */
+  font-weight:800 !important;
+  font-size:1.12rem !important;
+  letter-spacing:.02em !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.6) !important;
+  opacity:1 !important;
+}
+.drafto-wrap .card .d-flex.align-items-center.justify-content-between{
+  opacity:1 !important;
+  filter:none !important;
+}
+
+/* Badge cap legible */
+.drafto-wrap .badge.badge-soft,
+.drafto-wrap .region-badge{
+  background:rgba(230,240,255,.12) !important;
+  color:#cfe4ff !important;
+  border:1px solid rgba(230,240,255,.22) !important;
+  font-weight:700 !important;
+  opacity:1 !important;
+}
+
+/* =========================================================
+   (Opcional) Colores por región
+   - Opción A: agrega data-region en la .card (recomendado)
+     <div class="card p-2" data-region="rio">...</div>
+   ========================================================= */
+.drafto-wrap .card[data-region="bosque"]  .d-flex > strong{ color:#b8f7c1 !important; }
+.drafto-wrap .card[data-region="rio"]     .d-flex > strong{ color:#cfe4ff !important; }
+.drafto-wrap .card[data-region="llanura"] .d-flex > strong{ color:#fff0b3 !important; }
+.drafto-wrap .card[data-region="montana"] .d-flex > strong{ color:#d9d1ff !important; }
+.drafto-wrap .card[data-region="pantano"] .d-flex > strong{ color:#bdebdc !important; }
+.drafto-wrap .card[data-region="desierto"] .d-flex > strong{ color:#ffd7a8 !important; }
+.drafto-wrap .card[data-region="costa"]   .d-flex > strong{ color:#cceaff !important; }
+
+/* =========================================================
+   (Opcional) Si NO ponés data-region en la .card,
+   podés usar una clase explícita en el título:
+   <strong class="region-title region-bosque">Bosque</strong>
+   ========================================================= */
+.drafto-wrap .region-title.region-bosque  { color:#b8f7c1 !important; }
+.drafto-wrap .region-title.region-rio     { color:#cfe4ff !important; }
+.drafto-wrap .region-title.region-llanura { color:#fff0b3 !important; }
+.drafto-wrap .region-title.region-montana { color:#d9d1ff !important; }
+.drafto-wrap .region-title.region-pantano { color:#bdebdc !important; }
+.drafto-wrap .region-title.region-desierto{ color:#ffd7a8 !important; }
+.drafto-wrap .region-title.region-costa   { color:#cceaff !important; }
