@@ -6,7 +6,7 @@
     {{-- Estos son los enlaces específicos para la página de inicio --}}
     <ul class="navbar-nav ms-auto pe-3">
         <li class="nav-item">
-            x<a class="nav-link active" aria-current="page" href="#Informacion" translate="no">Informacion</a>
+            <a class="nav-link active" aria-current="page" href="#Informacion" translate="no">Informacion</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#Jugar">Jugar</a>
