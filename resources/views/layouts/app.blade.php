@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'VifraSoft')</title>
-    
+    @stack('styles')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">      
+    <!-- <link rel="stylesheet" href="{{asset('css/styles.css')}}">       -->
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="papuu">
   
   <header>
     <div class="container-fluid bg-dark">
@@ -51,7 +51,7 @@
     </div>
   </header>
   
-  <main class="container mt-5 flex-grow-1"> {{-- Usamos <main> para el contenido principal --}}
+  <main class="container mt-5"> {{-- Usamos <main> para el contenido principal --}}
     @if (session('success'))
       <div class="alert alert-success">
         {{ session('success') }}
@@ -65,15 +65,15 @@
   
   {{-- FOOTER GENÉRICO --}}
   <footer class="bg-dark text-white text-center py-3 mt-5">
-    <div class="container ">
+    <div class="container">
       <img class="navbar-brand" src="{{ asset('img/VifraSoft_Logo-removebg-preview.png') }}" alt="Logo" height="50px" width="110px">
       <p>&copy; {{ date('Y') }} VifraSoft. Todos los derechos reservados.</p>
     </div>
   </footer>
 
   {{-- Scripts de JS al final del body para mejor rendimiento --}}
-  <script src="{{ asset('js/scrip.js')}}"></script> 
+  <!-- <script src="{{ asset('js/scrip.js')}}"></script>  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  
+  @stack('scripts')
 </body>
 </html>

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DraftoMoveController;
+use App\Http\Controllers\DraftoResultsController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as FrameworkCsrf;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +23,23 @@ Route::get('/register', function () {
 Route::get('/game', function () {
     return view('game');
 });
+
+Route::get('/jugar', function () {
+    return view('draftostation.juego');
+})->name('jugar');
+
+Route::post('/draftostation/move', [DraftoMoveController::class, 'store'])
+    ->name('drafto.move.store')
+    ->withoutMiddleware([FrameworkCsrf::class]);
+
+Route::post('/draftostation/results', [DraftoResultsController::class, 'store'])
+    ->name('drafto.results.store')
+    ->withoutMiddleware([FrameworkCsrf::class]);
+
+// NUEVO: vista con grilla de histórico
+Route::get('/draftostation/history', [DraftoResultsController::class, 'history'])
+    ->name('drafto.results.history')
+    ->withoutMiddleware([FrameworkCsrf::class]);
 
 Route::get('/createuser', function () {
     return view('admin.createuser');
