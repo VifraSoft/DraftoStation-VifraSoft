@@ -1,69 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VifraSoft</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{asset('css/styles.css')}}">    
-</head>
-<body class="papuu">
-  <header>
-    <!-- Barra de menú en el header -->
-    <div class="container-fluid bg-dark">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <!-- Logo o título -->
-          <img class="navbar-brand" src="{{ asset('img/VifraSoft_Logo-removebg-preview.png') }}" alt="Logo" height="100px" width="220px">
-          <!-- Botón para menú colapsable en móviles -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menú">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <!-- Links del menú -->
-          <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ms-auto pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#Informacion">Informacion</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Jugar">Jugar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Clasificación">Clasificación</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Jugadores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Acerca de</a>
-              </li>
-            </ul>
-            
-            <!-- Botones a la derecha -->
-            <div class="d-flex">
-                <a href="/login" class="btn btn-outline-light me-2">Iniciar Sesión</a>
-                <a href="/register" class="btn btn-primary">Registrarse</a>
-            </div>
-            
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <!-- Contenedor principal -->
-  <div class="container mt-5">
-    @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-6 p-5">
-        <h1>DraftoStation</h1>
-=======
 @extends('layouts.app')
 
 @section('title', 'Inicio - DraftoStation') {{-- Un título específico para esta página --}}
@@ -91,7 +25,6 @@
     <div class="row align-items-center mb-5"> 
       <div class="col-12 col-md-6 col-lg-6 p-5 text-black"> 
         <h1 translate="no">DraftoStation</h1> 
->>>>>>> feature
         <p>DraftoStation es un juego de colección y draft donde los jugadores seleccionan consolas de videojuegos para colocarlas en distintos recintos de su tablero. 
           El objetivo es puntuar lo máximo posible utilizando la estrategia correcta para cada espacio.</p>
       </div>
